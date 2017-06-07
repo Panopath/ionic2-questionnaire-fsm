@@ -1,0 +1,31 @@
+page-home {
+  ion-grid {
+    button {
+      display: block !important;
+      height: auto !important;
+      padding: 14px 0 !important;
+      contain: content !important;
+      span {
+        display: block !important;
+      }
+      [class^="icomoon-"] {
+        margin-bottom: 15px;
+        font-size: 60px;
+      }
+      .icomoon-camera {
+        display: block;
+        font-size: 68px;
+        height: 60px;
+      }
+      .icomoon-info {
+        display: block;
+        font-size: 62px;
+        height: 60px;
+      }
+    }
+  }
+  .loginInfo {
+    margin-top: 14px;
+    text-align: center;
+  }
+}

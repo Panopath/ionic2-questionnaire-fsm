@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>问卷调查</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding *ngIf="quizData">
+
+
+  <ion-list>
+    <ion-list-header style="border-top: 0;">
+      {{question.text}}
+    </ion-list-header>
+    <ion-item *ngFor="let option of question.options">
+      <ion-label>{{option.text}}</ion-label>
+      <ion-checkbox [(ngModel)]="checked[option.value]" (ionChange)="onChecked(option.value)"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-item *ngIf="etcSelected">
+    <ion-label>其他</ion-label>
+    <ion-input placeholder="请说明" [(ngModel)]="state.etc[state.currentQuestion]"></ion-input>
+  </ion-item>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button icon-left color="royal" (click)="prev()" [hidden]="state.history.length==0">
+        <ion-icon name="arrow-back"></ion-icon>
+        上一题
+      </button>
+      <button ion-button icon-right color="royal" (click)="next()"
+              [disabled]="!state.answers[state.currentQuestion]||state.answers[state.currentQuestion].length==0||(etcSelected&&!state.etc[state.currentQuestion])">
+        下一题
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

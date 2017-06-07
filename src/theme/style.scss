@@ -1,0 +1,27 @@
+.important-toast {
+  padding: 20px;
+  .toast-wrapper {
+    padding: 0 10px;
+    background: transparent !important;
+    .toast-container {
+      padding: 20px 0;
+      background: #333;
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+ion-toolbar.toolbar-md {
+  min-height: 0 !important;
+  padding: 0 !important;
+  ion-icon{
+    position: relative;
+    top: 2px;
+  }
+  span {
+    font-size: 16px;
+    margin-left: 12px;
+    vertical-align: 2px;
+  }
+}
